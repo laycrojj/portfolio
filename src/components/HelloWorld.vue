@@ -1,8 +1,9 @@
 <script setup lang="ts">
 
 import { onMounted, onUnmounted, ref } from 'vue';
+import BaseIcon from './BaseIcon.vue'; 
 
-const jobs = ["Developer", "Dad", "3D Artist", "Tinkerer", "Team Leader"];
+const jobs = ["Developer", "Dad", "3D Artist", "Post Graduate"];
 
 const currentJob = ref(jobs[1]);
 
@@ -11,7 +12,7 @@ function iterateJobs(): void {
   currentJob.value = jobs[nextIndex];
 }
 
-let loopJobs;
+let loopJobs: number;
 onMounted(() => {
 
   loopJobs = setInterval(iterateJobs, 2000);
@@ -26,15 +27,17 @@ onUnmounted(() => clearInterval(loopJobs));
 </script>
 
 <template>
-  <div class="p-20 w-4/6">
-    <div>
-      <h1 id="title-text" class="text-yellow-50 font-bold text-8xl font-sans leading-relaxed h-24">I'm Owen Jackson,<br><span class="italic text-yellow-400">{{ currentJob }}</span></h1>
-      <!-- <div class="h-4 w-full bg-yellow-400 mt-5"></div> -->
+  <div class="p-8 w-full min-h-screen md:flex md:gap-4 md:items-center">
+    <div class=" pt-20 basis-3/5 order-last">
+      <h1 id="title-text" class="text-yellow-50 font-bold h-96 text-6xl font-sans leading-relaxed md:text-8xl">I'm Owen Jackson:<br><span class="italic text-yellow-400">{{ currentJob }}</span></h1>
+    </div>
+    <div class="basis-2/5 max-h-max">
+      <BaseIcon :name="currentJob"></BaseIcon>
     </div>
   </div>
 </template>
 
-<style>
+<!-- <style>
 @keyframes cursor-blink {
   0% {
     opacity: 0;
@@ -52,4 +55,4 @@ onUnmounted(() => clearInterval(loopJobs));
   display: inline-block;
   animation: cursor-blink 1s steps(2) infinite;
 }
-</style>
+</style> -->

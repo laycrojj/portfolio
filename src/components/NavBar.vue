@@ -8,7 +8,7 @@ const menuVisible = ref(false);
 
 <template>
 
-    <nav class="fixed w-full z-20 top-0 left-0 bg-zinc-900">
+    <nav class="fixed w-full z-20 top-0 left-0 bg-zinc-900 border-b-2 border-yellow-400">
         <div class="flex flex-wrap mx-12 items-center justify-between p-4">
                 <span class="text-2xl font-semibold text-white">Owen Jackson</span>
             <div class="">
@@ -28,14 +28,11 @@ const menuVisible = ref(false);
                         <a href="#" class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-blue-500 text-white hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent border-gray-700">About</a>
                     </li> 
                     <li> 
-                        <a href="#" class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-blue-500 text-white hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent border-gray-700">Services</a>
+                        <a href="#" class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-blue-500 text-white hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent border-gray-700">Work</a>
                     </li> 
                     <li> 
                         <a href="#" class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-blue-500 text-white hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent border-gray-700">Contact</a>
                     </li> 
-                    <li> 
-                        <a href="#" class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-blue-500 text-white hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent border-gray-700">Contact</a>
-                    </li>
                 </ul>
             </div>
         </div>
