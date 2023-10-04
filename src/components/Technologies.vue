@@ -7,59 +7,59 @@ const Techies = {
   "Framework":
     {
       "Vue":{
-        src:'/src/assets/vue.png'
+        src:'/vue.png'
       },
       "Laravel":{
-        src:'/src/assets/laravel.png'
+        src:'/laravel.png'
       },
     },
   "Language":
     {
       "Typescript":{
-        src:'/src/assets/ts.png'
+        src:'/ts.png'
       },
       "Python":{
-        src:'/src/assets/python.png'
+        src:'/python.png'
       },
       "C#":{
-        src:'/src/assets/c_sharp.png'
+        src:'/c_sharp.png'
       },
       "Maxscript":{
-        src:'/src/assets/maxscript.png'
+        src:'/maxscript.png'
       },
       "Bash":{
-        src:'/src/assets/bash.png'
+        src:'/bash.png'
       },
     },
   "3D Software":
     {
       "3DS Max":{
-        src:'/src/assets/3ds_max.png'
+        src:'/3ds_max.png'
       },
       "Blender":{
-        src:'/src/assets/blender.png'
+        src:'/blender.png'
       },
       "VRay":{
-        src:'/src/assets/vray.png'
+        src:'/vray.png'
       },
       "Unity":{
-        src:'/src/assets/unity.png'
+        src:'/unity.png'
 
       },
       "Substance":{
-        src:'/src/assets/substance.png'
+        src:'/substance.png'
       },
       "Maya":{
-        src:'/src/assets/maya.png'
+        src:'/maya.png'
       },
     },
   "Compositing Software":
     {
       "Photoshop":{
-        src:'/src/assets/photoshop.png'
+        src:'/photoshop.png'
       },
       "After Effects":{
-        src:'/src/assets/after_effects.png'
+        src:'/after_effects.png'
       },
     },
 
@@ -67,21 +67,28 @@ const Techies = {
 
 const Technologies = ref({});
 
-const categories = ref({"Language":true,"Framework":true,"3D Software":true,"Compositing Software":true});
+const categories = ref(
+  {
+    "Language":true,
+    "Framework":true, 
+    "3D Software":true,
+    "Compositing Software":true
+  }
+);
 
 function toggleTechnologies(type: String): void {
   
-  if(categories.value[type]){
-    Object.keys(Techies[type]).forEach((k) => {
-      delete Technologies.value[k];
+  if(categories.value[type as keyof typeof categories.value]){
+    Object.keys(Techies[type as keyof typeof Techies]).forEach((k) => {
+      delete Technologies.value[k as keyof typeof Technologies.value];
     })
   }
   else{
-    Object.keys(Techies[type]).forEach((k) => {
-      Technologies.value[k] = Techies[type][k];
+    Object.keys(Techies[type as keyof typeof Techies]).forEach((k) => {
+      Technologies.value[k as keyof typeof Technologies.value] = Techies[type as keyof typeof Technologies.value][k];
     })
   }
-  categories.value[type] = !categories.value[type]
+  categories.value[type as keyof typeof categories.value] = !categories.value[type as keyof typeof categories.value]
 }
 
 onMounted(() => {
@@ -89,7 +96,7 @@ onMounted(() => {
 // Initialize Technologies Dict
   Object.keys(Techies).forEach((i) => {
 
-    Object.keys(Techies[i]).forEach((k) => {
+    Object.keys(Techies[i as keyof typeof Techies]).forEach((k) => {
       Technologies.value[k] = Techies[i][k];
     })
 
