@@ -34,8 +34,14 @@ function handleScroll() {
 }
 
 onMounted(() => {
-  handleScroll();
-  window.addEventListener('scroll', handleScroll);
+  if (screen.width >= 768)
+  {
+    handleScroll();
+    window.addEventListener('scroll', handleScroll);
+  }
+  else{
+    console.log("Too Small")
+  };
 })
 
 </script>
@@ -115,7 +121,7 @@ onMounted(() => {
         </div>
         
         <div class="basis-2/5 w-48 h-56 mt-12 ">
-          <img src="../public/brackets-wip.webp" loading="lazy" class=" h-full object-center m-auto"/>
+          <img src="../public/brackets-wip.webp" loading="lazy" class=" w-full max-w-lg object-center m-auto"/>
         </div>
       
       </div>
