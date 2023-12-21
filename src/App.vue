@@ -1,22 +1,57 @@
 <script setup lang="ts">
+import { onMounted, ref } from 'vue';
 import HelloWorld from './components/HelloWorld.vue'
 import NavBar from './components/NavBar.vue';
 import Technologies from './components/Technologies.vue';
 import Footer from './components/Footer.vue';
 import PortfolioCV from './components/icons/PortfolioCV.vue';
+
+
+const activeNav = ref('')
+
+const welcome = ref(null);
+const about = ref(null);
+const work = ref(null);
+const contact = ref(null);
+
+function handleScroll() {
+    if( window.scrollY < about.value.offsetTop)
+    {
+      activeNav.value = 'welcome'
+    } 
+    else if( window.scrollY < about.value.offsetTop + about.value.scrollHeight)
+    {
+      activeNav.value = 'about'
+    }
+    else if( window.scrollY < work.value.offsetTop + work.value.scrollHeight)
+    {
+      activeNav.value = 'work'
+    } 
+    else
+    {
+      activeNav.value = 'contact'
+    }
+}
+
+onMounted(() => {
+  handleScroll();
+  window.addEventListener('scroll', handleScroll);
+})
+
 </script>
+
 
 <template>
   <header>
-    <NavBar />
+    <NavBar :bob="activeNav"/>
   </header>
 
   <main>
 
-    <HelloWorld />
+    <HelloWorld id="welcome" ref="welcome"/>
 
     <!-- About -->
-    <div class="leading-relaxed bg-gray-200 min-h-screen font-semibold font-serif text-black border-y-8 py-20 p-14 md:p-20 md:flex md:gap-12">
+    <div id="about" ref="about" class="leading-relaxed bg-gray-200 min-h-screen font-semibold font-serif text-black border-y-8 py-20 p-14 md:p-20 md:flex md:gap-12">
       <div class="self-center basis-3/5">
         <div class="mb-8">
 
@@ -32,14 +67,14 @@ import PortfolioCV from './components/icons/PortfolioCV.vue';
           in East Yorkshire
           with my young family. I have a Masters in Computer Science, and over 10 years professional experience in the 3D
           industry as a Developer, Team Lead, and Artist.</p>
-        <a href="#" class="text-xl leading-loose text-black font-medium">Read more about my skills and experience
+        <a href="https://drive.google.com/drive/folders/1ynFd7tCFpQYwyWfHZTogcb6kAeuTTtw9?usp=sharing" target="_blank" class="text-xl leading-loose text-black font-medium">Read my CV for more about my skills and experience
         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 inline-block">
           <path stroke-linecap="round" stroke-linejoin="round" d="M17.25 8.25L21 12m0 0l-3.75 3.75M21 12H3" />
         </svg>
         </a>
       </div>
       <div class="basis-2/5 p-8 self-center">
-        <a href="#">
+        <a href="https://drive.google.com/drive/folders/1ynFd7tCFpQYwyWfHZTogcb6kAeuTTtw9?usp=sharing" target="_blank">
           <PortfolioCV></PortfolioCV>
           <p class=" font-medium text-center pt-4 text-lg">Request access to Portfolio and CV</p>
         </a>
@@ -53,7 +88,7 @@ import PortfolioCV from './components/icons/PortfolioCV.vue';
     </div>
 
     <!-- Work -->
-    <div class="bg-gray-200 font-serif min-h-screen border-t-8 font-semibold p-14 md:p-20 text-slate-800 relative">
+    <div id="work" ref="work" class="bg-gray-200 font-serif min-h-screen border-t-8 font-semibold p-14 md:p-20 text-slate-800 relative">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
         class="w-12 h-12 inline-block mr-4">
         <path stroke-linecap="round" stroke-linejoin="round"
@@ -79,7 +114,8 @@ import PortfolioCV from './components/icons/PortfolioCV.vue';
           </div>
         </div>
         
-        <div class="basis-2/5 w-48 h-48 mt-12 bg-red-400">
+        <div class="basis-2/5 w-48 h-56 mt-12 ">
+          <img src="../public/brackets-wip.webp" loading="lazy" class=" h-full object-center m-auto"/>
         </div>
       
       </div>
@@ -89,6 +125,6 @@ import PortfolioCV from './components/icons/PortfolioCV.vue';
     <Technologies />
 
     <!-- Footer -->
-    <Footer />
+    <Footer id="contact" ref="contact" />
 
 </main></template>

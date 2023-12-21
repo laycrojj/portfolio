@@ -36,23 +36,3 @@ onUnmounted(() => clearInterval(loopJobs));
     </div>
   </div>
 </template>
-
-<!-- <style>
-@keyframes cursor-blink {
-  0% {
-    opacity: 0;
-  }
-}
-
-#title-text::after {
-  content: "";
-  position: relative;
-  left: 20px;
-  top: 10px;
-  width: 8px;
-  height: 100%;
-  background: rgb(250, 204, 21);
-  display: inline-block;
-  animation: cursor-blink 1s steps(2) infinite;
-}
-</style> -->
