@@ -3,7 +3,7 @@
 import { ref } from 'vue';
 
 const props = defineProps({
-    bob: String
+    activeSection: String
 });
 
 const menuVisible = ref(false);
@@ -27,19 +27,19 @@ const menuVisible = ref(false);
                 <ul class="flex flex-col p-4 md:p-0 mt-4 font-bold border md:flex-row md:space-x-8 md:mt-0 md:border-0 border-gray-700 rounded-lg">
                     <li>
                         <a href="#welcome" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:p-0"
-                        :class="{'text-yellow-300':bob=='welcome'}">Home</a>
+                        :class="{'text-yellow-300':activeSection=='welcome'}">Home</a>
                     </li>
                     <li>
                         <a href="#about" class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-blue-500 text-white hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent border-gray-700"
-                        :class="{'text-yellow-300':bob=='about'}">About</a>
+                        :class="{'text-yellow-300':activeSection=='about'}">About</a>
                     </li> 
                     <li> 
                         <a href="#work" class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-blue-500 text-white hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent border-gray-700"
-                        :class="{'text-yellow-300':bob=='work'}" >Work</a>
+                        :class="{'text-yellow-300':activeSection=='work'}" >Work</a>
                     </li> 
                     <li> 
                         <a href="#contact" class="block py-2 pl-3 pr-4 rounded md:hover:bg-transparent md:hover:text-blue-700 md:p-0 hover:text-blue-500 text-white hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent border-gray-700"
-                        :class="{'text-yellow-300':bob=='contact'}">Contact</a>
+                        :class="{'text-yellow-300':activeSection=='contact'}">Contact</a>
                     </li> 
                 </ul>
             </div>

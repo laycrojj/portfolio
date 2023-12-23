@@ -7,7 +7,7 @@ import Footer from './components/Footer.vue';
 import PortfolioCV from './components/icons/PortfolioCV.vue';
 
 
-const activeNav = ref('')
+const activeNav = ref('');
 
 const welcome = ref(null);
 const about = ref(null);
@@ -49,7 +49,7 @@ onMounted(() => {
 
 <template>
   <header>
-    <NavBar :bob="activeNav"/>
+    <NavBar :activeSection="activeNav"/>
   </header>
 
   <main>

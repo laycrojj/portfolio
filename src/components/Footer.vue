@@ -31,7 +31,7 @@
       </a>
 
 
-      <a href="https://uk.linkedin.com/" target="_blank" class="relative w-10 h-10 bg-gray-800 rounded-full border-2 border-yellow-500">
+      <a href="https://uk.linkedin.com/in/owen-jackson-3b4374126" target="_blank" class="relative w-10 h-10 bg-gray-800 rounded-full border-2 border-yellow-500">
 
         <svg width="40" height="40" version="1.1" id="svg1" viewBox="2 1 40 40"
           xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
