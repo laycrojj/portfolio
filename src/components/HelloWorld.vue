@@ -27,7 +27,7 @@ onUnmounted(() => clearInterval(loopJobs));
 </script>
 
 <template>
-  <div class="p-8 w-full min-h-screen md:flex md:gap-4 md:items-center">
+  <div class="p-8 w-full flex-grow md:flex md:gap-4 md:items-center">
     <div class=" pt-20 basis-3/5 order-last">
       <h1 id="title-text" class="text-yellow-50 font-bold h-96 text-6xl font-sans leading-relaxed md:text-8xl">I'm Owen Jackson:<br><span class="italic text-yellow-400">{{ currentJob }}</span></h1>
     </div>

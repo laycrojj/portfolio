@@ -1,14 +1,14 @@
    
   <script setup lang="ts">
 
-import { computed } from 'vue';
+import { computed, type Component } from 'vue';
 import DefaultOwenIcon from './icons/DefaultOwenIcon.vue';
 import IconOwenBeret from './icons/IconOwenBeret.vue';
 import IconOwenHoodie from './icons/IconOwenHoodie.vue';
 import IconOwenMortarBoard from './icons/IconOwenMortarBoard.vue';
 
 
-  const icons = {
+  const icons: Record<string, Component> = {
     "Developer": IconOwenHoodie,
     "3D Artist": IconOwenBeret,
     "Dad":DefaultOwenIcon,
@@ -25,7 +25,7 @@ import IconOwenMortarBoard from './icons/IconOwenMortarBoard.vue';
    
     const iconComponent = computed(() => 
     {
-        return icons[props.name]
+        return icons[props.name] ?? DefaultOwenIcon
     });
 
   </script>
@@ -34,6 +34,7 @@ import IconOwenMortarBoard from './icons/IconOwenMortarBoard.vue';
       <component
         :is="iconComponent"
         role="img"
+        :aria-label="`Sketch of Owen as ${name}`"
         class="inline-block fill-current"
       />
     </template>
