@@ -10,7 +10,7 @@ import Footer from './components/Footer.vue'
       <NavBar />
     </header>
 
-    <main class="flex-grow">
+    <main class="flex-grow flex">
       <HelloWorld />
     </main>
 

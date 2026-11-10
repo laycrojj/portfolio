@@ -1,40 +1,22 @@
-# portfolio-site
+# owenjjackson.com
 
-This template should help get you started developing with Vue 3 in Vite.
+Source for [www.owenjjackson.com](https://www.owenjjackson.com), currently a holding page while the full portfolio is rebuilt.
 
-## Recommended IDE Setup
+Built with Vue 3, Vite and Tailwind CSS.
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Development
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) to make the TypeScript language service aware of `.vue` types.
-
-If the standalone TypeScript plugin doesn't feel fast enough to you, Volar has also implemented a [Take Over Mode](https://github.com/johnsoncodehk/volar/discussions/471#discussioncomment-1361669) that is more performant. You can enable it by the following steps:
-
-1. Disable the built-in TypeScript Extension
-    1) Run `Extensions: Show Built-in Extensions` from VSCode's command palette
-    2) Find `TypeScript and JavaScript Language Features`, right click and select `Disable (Workspace)`
-2. Reload the VSCode window by running `Developer: Reload Window` from the command palette.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
-
-## Project Setup
+Requires Node 20.19 or newer.
 
 ```sh
 npm install
+npm run dev         # local dev server with hot reload
+npm run type-check  # TypeScript check
+npm run build       # production build into dist/
 ```
 
-### Compile and Hot-Reload for Development
+## Deployment
 
-```sh
-npm run dev
-```
+Pushing to `master` runs `.github/workflows/deploy.yml`, which builds the site and publishes `dist/` to the `gh-pages` branch. The custom domain is set by `public/CNAME`, which is copied into every build.
 
-### Type-Check, Compile and Minify for Production
-
-```sh
-npm run build
-```
+Dependabot (`.github/dependabot.yml`) opens a monthly PR with dependency updates.

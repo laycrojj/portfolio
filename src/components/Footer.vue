@@ -1,14 +1,14 @@
 <script setup lang="ts">
-
+const year = new Date().getFullYear();
 </script>
 
 <template>
   <!-- Footer -->
-  <div class="font-serif h-48 border-t-8 font-semibold border-yellow-400 px-20 py-16 text-white relative">
-    <p href="#" class="text-xl text-white">Copyright Owen Jackson, all rights reserved.</p>
+  <div class="font-serif border-t-8 font-semibold border-yellow-400 px-8 md:px-20 py-16 text-white relative">
+    <p class="text-xl text-white">New site coming soon. In the meantime, find me here:</p>
     <div class="flex gap-4 mt-2 text-black">
-      <a href="https://github.com/laycrojj" target="_blank">
-        <svg class="block rounded-full border-2 border-yellow-500 bg-white" version="1.0"
+      <a href="https://github.com/laycrojj" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+        <svg aria-hidden="true" class="block rounded-full border-2 border-yellow-500 bg-white" version="1.0"
           xmlns="http://www.w3.org/2000/svg" width="40px" height="40px" viewBox="0 0 240.000000 240.000000"
           preserveAspectRatio="xMidYMid meet">
           <g transform="translate(0.000000,240.000000) scale(0.100000,-0.100000)" fill="#000000" stroke="none">
@@ -17,8 +17,8 @@
           </g>
         </svg>
       </a>
-      <a href="https://www.artstation.com/owenjackson55" target="_blank">
-        <svg class="w-10 h-10 bg-gray-800 rounded-full border-2 border-yellow-500" version="1.1" id="Layer_1"
+      <a href="https://www.artstation.com/owenjackson55" target="_blank" rel="noopener noreferrer" aria-label="ArtStation">
+        <svg aria-hidden="true" class="w-10 h-10 bg-gray-800 rounded-full border-2 border-yellow-500" version="1.1" id="Layer_1"
           fill="#13AFF0" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           viewBox="0 0 208.8 195.9" xml:space="preserve">
           <g>
@@ -31,9 +31,9 @@
       </a>
 
 
-      <a href="https://uk.linkedin.com/in/owen-jackson-3b4374126" target="_blank" class="relative w-10 h-10 bg-gray-800 rounded-full border-2 border-yellow-500">
+      <a href="https://uk.linkedin.com/in/owen-jackson-3b4374126" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" class="relative w-10 h-10 bg-gray-800 rounded-full border-2 border-yellow-500">
 
-        <svg width="40" height="40" version="1.1" id="svg1" viewBox="2 1 40 40"
+        <svg aria-hidden="true" width="40" height="40" version="1.1" id="svg1" viewBox="2 1 40 40"
           xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg">
           <defs id="defs1" />
           <g id="g1" transform="translate(5.3367217,5.0317662)">
@@ -53,5 +53,6 @@
       </a>
 
     </div>
+    <p class="mt-6 text-sm text-gray-400">&copy; {{ year }} Owen Jackson. All rights reserved.</p>
   </div>
 </template>
